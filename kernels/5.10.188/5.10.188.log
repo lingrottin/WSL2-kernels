@@ -3877,3 +3877,110 @@ enable BPF STREAM_PARSER (BPF_STREAM_PARSER) [N/y/?] n
   GEN     .version
   CHK     include/generated/compile.h
   LD      vmlinux.o
+  SYNC    include/config/auto.conf.cmd
+*
+* Restart config...
+*
+*
+* Mitigations for speculative execution vulnerabilities
+*
+Mitigations for speculative execution vulnerabilities (SPECULATION_MITIGATIONS) [Y/n/?] (NEW) 
+  Remove the kernel mapping in user mode (PAGE_TABLE_ISOLATION) [Y/n/?] y
+  Avoid speculative indirect branches in kernel (RETPOLINE) [Y/n/?] y
+    Enable return-thunks (RETHUNK) [Y/n/?] (NEW) 
+      Enable UNRET on kernel entry (CPU_UNRET_ENTRY) [Y/n/?] (NEW) 
+  Enable IBPB on kernel entry (CPU_IBPB_ENTRY) [Y/n/?] (NEW) 
+  Enable IBRS on kernel entry (CPU_IBRS_ENTRY) [Y/n/?] (NEW) 
+  Mitigate Straight-Line-Speculation (SLS) [N/y/?] (NEW) 
+*
+* Networking options
+*
+Packet socket (PACKET) [Y/n/m/?] y
+  Packet: sockets monitoring interface (PACKET_DIAG) [Y/n/m/?] y
+Unix domain sockets (UNIX) [Y/n/m/?] y
+  UNIX: socket monitoring interface (UNIX_DIAG) [Y/n/m/?] y
+Transport Layer Security support (TLS) [N/m/y/?] n
+Transformation user configuration interface (XFRM_USER) [Y/n/m/?] y
+  Compatible ABI support (XFRM_USER_COMPAT) [N/m/y/?] n
+Transformation virtual interface (XFRM_INTERFACE) [N/m/y/?] n
+Transformation sub policy support (XFRM_SUB_POLICY) [N/y/?] n
+Transformation migrate database (XFRM_MIGRATE) [N/y/?] n
+Transformation statistics (XFRM_STATISTICS) [N/y/?] n
+PF_KEY sockets (NET_KEY) [N/m/y/?] n
+XDP sockets (XDP_SOCKETS) [N/y/?] n
+TCP/IP networking (INET) [Y/n/?] y
+  IP: multicasting (IP_MULTICAST) [N/y/?] n
+  IP: advanced router (IP_ADVANCED_ROUTER) [Y/n/?] y
+    FIB TRIE statistics (IP_FIB_TRIE_STATS) [N/y/?] n
+    IP: policy routing (IP_MULTIPLE_TABLES) [Y/n/?] y
+    IP: equal cost multipath (IP_ROUTE_MULTIPATH) [N/y/?] n
+    IP: verbose route monitoring (IP_ROUTE_VERBOSE) [N/y/?] n
+  IP: kernel level autoconfiguration (IP_PNP) [Y/n/?] y
+    IP: DHCP support (IP_PNP_DHCP) [Y/n/?] y
+    IP: BOOTP support (IP_PNP_BOOTP) [N/y/?] n
+    IP: RARP support (IP_PNP_RARP) [N/y/?] n
+  IP: tunneling (NET_IPIP) [Y/n/m/?] y
+  IP: GRE demultiplexer (NET_IPGRE_DEMUX) [N/m/y/?] n
+  IP: TCP syncookie support (SYN_COOKIES) [Y/?] y
+  Virtual (secure) IP: tunneling (NET_IPVTI) [N/m/y/?] n
+  IP: Foo (IP protocols) over UDP (NET_FOU) [N/m/y/?] n
+  IP: FOU encapsulation of IP tunnels (NET_FOU_IP_TUNNELS) [N/y/?] n
+  IP: AH transformation (INET_AH) [N/m/y/?] n
+  IP: ESP transformation (INET_ESP) [Y/n/m/?] y
+    IP: ESP transformation offload (INET_ESP_OFFLOAD) [N/m/y/?] n
+    IP: ESP in TCP encapsulation (RFC 8229) (INET_ESPINTCP) [N/y/?] n
+  IP: IPComp transformation (INET_IPCOMP) [N/m/y/?] n
+  INET: Source port perturbation table size (as power of 2) (INET_TABLE_PERTURB_ORDER) [16] (NEW) 
+  INET: socket monitoring interface (INET_DIAG) [Y/n/m/?] y
+    UDP: socket monitoring interface (INET_UDP_DIAG) [Y/n/m/?] y
+    RAW: socket monitoring interface (INET_RAW_DIAG) [Y/n/m/?] y
+    INET: allow privileged process to administratively close sockets (INET_DIAG_DESTROY) [N/y/?] n
+  TCP: MD5 Signature Option support (RFC2385) (TCP_MD5SIG) [N/y/?] n
+  NetLabel subsystem support (NETLABEL) [N/y/?] n
+  MPTCP: Multipath TCP (MPTCP) [N/y/?] n
+Security Marking (NETWORK_SECMARK) [Y/n/?] y
+Timestamping in PHY devices (NETWORK_PHY_TIMESTAMPING) [Y/n/?] y
+The Reliable Datagram Sockets Protocol (RDS) [N/m/y/?] n
+Asynchronous Transfer Mode (ATM) (ATM) [N/m/y/?] n
+802.1d Ethernet Bridging (BRIDGE) [Y/n/m/?] y
+  IGMP/MLD snooping (BRIDGE_IGMP_SNOOPING) [Y/n/?] y
+  VLAN filtering (BRIDGE_VLAN_FILTERING) [Y/n/?] y
+  MRP protocol (BRIDGE_MRP) [N/y/?] n
+802.1Q/802.1ad VLAN Support (VLAN_8021Q) [Y/n/m/?] y
+  GVRP (GARP VLAN Registration Protocol) support (VLAN_8021Q_GVRP) [N/y/?] n
+  MVRP (Multiple VLAN Registration Protocol) support (VLAN_8021Q_MVRP) [N/y/?] n
+ANSI/IEEE 802.2 LLC type 2 Support (LLC2) [N/m/y/?] n
+Appletalk protocol support (ATALK) [N/m/y/?] n
+CCITT X.25 Packet Layer (X25) [N/m/y/?] n
+LAPB Data Link Driver (LAPB) [N/m/y/?] n
+Phonet protocols family (PHONET) [N/m/y/?] n
+Data Center Bridging support (DCB) [N/y/?] n
+DNS Resolver support (DNS_RESOLVER) [Y/?] y
+B.A.T.M.A.N. Advanced Meshing Protocol (BATMAN_ADV) [N/m/y/?] n
+Open vSwitch (OPENVSWITCH) [N/m/y/?] n
+Virtual Socket protocol (VSOCKETS) [Y/n/m/?] y
+  Virtual Sockets monitoring interface (VSOCKETS_DIAG) [Y/n/m/?] y
+  Virtual Sockets loopback transport (VSOCKETS_LOOPBACK) [N/m/y/?] n
+  virtio transport for Virtual Sockets (VIRTIO_VSOCKETS) [N/m/y/?] n
+Hyper-V transport for Virtual Sockets (HYPERV_VSOCKETS) [Y/n/m/?] y
+NETLINK: socket monitoring interface (NETLINK_DIAG) [Y/n/m/?] y
+High-availability Seamless Redundancy (HSR & PRP) (HSR) [N/m/y/?] n
+Switch (and switch-ish) device support (NET_SWITCHDEV) [Y/n/?] y
+L3 Master device support (NET_L3_MASTER_DEV) [Y/?] y
+Qualcomm IPC Router support (QRTR) [N/m/y/?] n
+NCSI interface support (NET_NCSI) [N/y/?] n
+Network priority cgroup (CGROUP_NET_PRIO) [Y/n/?] y
+Network classid cgroup (CGROUP_NET_CLASSID) [Y/?] y
+enable BPF Just In Time compiler (BPF_JIT) [Y/n/?] y
+enable BPF STREAM_PARSER (BPF_STREAM_PARSER) [N/y/?] n
+  DESCEND  objtool
+  DESCEND  bpf/resolve_btfids
+  CALL    scripts/atomic/check-atomics.sh
+  CALL    scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  GEN     .version
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/version.o
+  AR      init/built-in.a
+  LD      vmlinux.o
