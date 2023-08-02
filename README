@@ -1,0 +1,1 @@
+This folder will store the compiled bzImage files and logs. This folder should hold the https://github.com/lingrottin/WSL2-kernels repository. update.sh is for uploading the kernel to GitHub.
